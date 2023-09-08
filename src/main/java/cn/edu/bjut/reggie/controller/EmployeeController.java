@@ -1,5 +1,6 @@
 package cn.edu.bjut.reggie.controller;
 
+import cn.edu.bjut.reggie.anno.Log;
 import cn.edu.bjut.reggie.common.R;
 import cn.edu.bjut.reggie.entity.Employee;
 import cn.edu.bjut.reggie.service.EmployeeService;
@@ -75,6 +76,7 @@ public class EmployeeController {
     }
 
     @PostMapping
+    @Log
     public R<String> save(HttpServletRequest request, @RequestBody Employee employee){
         log.info("新增员工，员工信息：{}", employee.toString());
 
@@ -128,6 +130,7 @@ public class EmployeeController {
      * @return
      */
     @PutMapping
+    @Log
     public R<String> update(HttpServletRequest request, @RequestBody Employee employee){
         log.info(employee.toString());
 
